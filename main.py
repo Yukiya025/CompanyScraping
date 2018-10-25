@@ -23,6 +23,7 @@ def get_html():
     n = 1
     with open('CompanyURL0.csv', 'w+') as file:
         writer = csv.writer(file, lineterminator='\n')
+        writer.writerow(['No.', 'PLink'])
         for index, row in csv_input.iterrows():
             url = csv_input['URL'][index]
 
@@ -46,6 +47,29 @@ def get_html():
                 writer.writerow([n, link_h])
             n += 1
 
+def dup():
+    c_url = pd.read_csv('CompanyURL0.csv')
+    drop_dup = c_url.drop_duplicates('No.', keep='first')
+    print(drop_dup)
+
+    drop_dup.to_csv('CompanyURL1.csv', index = False)
+
+def comb():
+    info1 = pd.read_csv('CompanyURL1.csv', usecols=['PLink'])
+    print(info1)
+    title_csv = pd.read_csv('CompanyURL.csv')
+    title_csv.join(info1).to_csv('out.csv', index=False)
+
+"""
+
+df1 = pd.read_csv("emails1.csv")
+df2 = pd.read_csv("emails2.csv")
+
+df3 = df1.merge(df2, on=["email"], how='outer')
+df3.to_csv("final.csv",index=False)
+"""
+
+
 def test1():
     """
     csvに保存しているURLを出力
@@ -56,4 +80,7 @@ def test1():
         url = csv_input['URL'][index]
         print(url)
 
+
 get_html()
+dup()
+comb()

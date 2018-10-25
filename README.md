@@ -15,4 +15,6 @@ This repository idea is from [Here](https://www.freelancer.com/projects/python/W
 - [Regular Expression test](https://regex101.com/)
 - [[Python3 `.find()` 文字列検索] 「または」の設定方法](https://teratail.com/questions/153160)
 - [[Python3] 検索した文字列からhtmlタグを取得](https://teratail.com/questions/153175)
-- [groupby](https://github.com/Yukiya025/csvCleaning/blob/master/main0.py)
+- [重複を削除](http://ailaby.com/duplicated/)
+- [pdオブジェクトをcsvにto_csv](https://note.nkmk.me/python-pandas-to-csv/)
+- [Pandasで特定列の読み込み方法](http://starpentagon.net/analytics/python_csv_specific_columns/) `read_csv('data.csv', usecols=['ID', 'Status'])`
